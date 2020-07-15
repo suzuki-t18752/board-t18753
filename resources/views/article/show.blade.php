@@ -20,7 +20,7 @@
                   @endif
                 </tr>
                 <tr><td colspan="6">{{ $article->article }}</td></tr>
-                @if(!($article->image === 'null'))
+                @if(!($article->image === null))
                   <tr><td><img src="{{ asset('storage/image/' . $article->image) }}" id="image_size"></td></tr>
                 @endif
               </tbody>
