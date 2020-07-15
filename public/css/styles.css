@@ -1,0 +1,80 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css');
+
+body {
+  background-color: #f4f7f8;
+}
+
+.navbar {
+  margin: 2rem 0 2.5rem 0;
+}
+
+.my-navbar {
+  align-items: center;
+  background: #333;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-bottom: 3rem;
+}
+
+.my-navbar-brand {
+  font-size: 18px;
+}
+
+.my-navbar-brand,
+.my-navbar-item {
+  color: #8c8c8c;
+}
+
+.my-navbar-brand:hover,
+a.my-navbar-item:hover {
+  color: #ffffff;
+}
+
+/* .table td:nth-child(2), */
+.table td:nth-child(3),
+.table td:nth-child(4),
+.table td:nth-child(5),
+.table td:nth-child(6) {
+  white-space: nowrap;
+  width: 1px;
+}
+
+.list-group-item span{
+  margin: 0 3px;
+}
+
+.form-control[disabled],
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+#image_size{
+  max-height: 300px;
+  max-width: 500px;
+}
+
+/* .modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+.modal__bg{
+  background: rgba(0,0,0,0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.modal__content{
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+} */
