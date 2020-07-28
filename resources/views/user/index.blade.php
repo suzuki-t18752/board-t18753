@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <nav class="panel panel-default">
           <div class="panel-heading">メニュー</div>
           <div class="panel-body">
@@ -17,7 +17,7 @@
           </div>
         </nav>
       </div>
-      <div class="column col-md-8">
+      <div class="column col-md-9">
         <div class="panel panel-default">
           <div class="panel-heading">投稿の管理</div>
           <table class="table">
