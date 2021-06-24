@@ -11,6 +11,16 @@
               <span>今月の　投稿数<strong>{{$count_article}}</strong></span>
               <span>/登録者数<strong>{{$count_user}}</strong></span>
             </div>
+            <br>
+            <form action="{{ route('article.index')}}" method="GET">
+              <div class="input-group form-search">
+                <input type="text" name="title_search" class="form-control search-query" placeholder="タイトル">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary" data-type="last">検索</button>
+                </span>
+              </div>
+            </form>
+            <br>
             <a href="/article/create" class="btn btn-default btn-block">新規投稿</a>
             <a href="{{ route('user.index', ['user_id' => Auth::id()]) }}" class="btn btn-default btn-block">投稿の管理</a>
             <a href="{{ route('user.edit', ['user_id' => Auth::id()]) }}" class="btn btn-default btn-block">ユーザー情報編集</a>

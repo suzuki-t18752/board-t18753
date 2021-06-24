@@ -12,10 +12,19 @@ use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $articles = Article::all();
-        $articles = Article::where('status', 0)->paginate(30);
+        
+        if($request->title_search == null){
+            $articles = Article::where('status', 0)->paginate(30);
+        }else{
+            $title = $request->title_search;
+            $articles = Article::where([
+                ['status', 0],
+                ['title', 'LIKE', '%'.$title.'%'],
+            ])->paginate(30);
+        }
         $day = Carbon::now('m');
         $count_article = Article::whereMonth('created_at', $day)->count();
         $count_user = User::whereMonth('created_at', $day)->count();

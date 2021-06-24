@@ -7,13 +7,22 @@
         <nav class="panel panel-default">
           <div class="panel-heading">メニュー</div>
           <div class="panel-body">
+            <form action="{{ route('user.index', ['user_id' => Auth::id()])}}" method="GET">
+              <div class="input-group form-search">
+                <input type="text" name="title_search" class="form-control search-query" placeholder="タイトル">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary" data-type="last">検索</button>
+                </span>
+              </div>
+            </form>
+            <br>
             <a href="/article/create" class="btn btn-default btn-block">新規投稿</a>
             <a href="{{ route('user.index', ['user_id' => Auth::id()]) }}" class="btn btn-default btn-block">投稿の管理</a>
             <a href="{{ route('user.edit', ['user_id' => Auth::id()]) }}" class="btn btn-default btn-block">ユーザー情報編集</a>
             <a href="/user/index/{{Auth::id()}}/export" class="btn btn-default btn-block">投稿のCSV出力</a>
           </div>
           <div class="list-group">
-            
+          
           </div>
         </nav>
       </div>

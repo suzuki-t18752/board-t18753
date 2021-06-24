@@ -10,10 +10,19 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $articles = Article::all();
-        $articles = Article::where('user_id', Auth::id())->paginate(30);
+        if($request->title_search == null){
+            $articles = Article::where('user_id', Auth::id())->paginate(30);
+        }else{
+            $title = $request->title_search;
+            $articles = Article::where([
+                ['user_id', Auth::id()],
+                ['title', 'LIKE', '%'.$title.'%'],
+            ])->paginate(30);
+        }
+
         return view('user/index', [
             'articles' => $articles,
         ]);
